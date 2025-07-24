@@ -18,7 +18,9 @@ RUN npm run build
 RUN npm prune --production
 
 # Expose the server port
-EXPOSE 3001
+ENV PORT=8080
+EXPOSE 8080
+
 
 # Start the server with garbage collection enabled
 CMD ["node", "--expose-gc", "dist/index-sse.js"]
